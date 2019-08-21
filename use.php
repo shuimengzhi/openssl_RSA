@@ -40,9 +40,11 @@ $decrypt = $rsa->decrypt($encrypt);
 echo "私钥解密后的数据: " . $decrypt, "\n-------------------------------\n";
 
 //签名
+//私钥签名
 $sign = $rsa->sign($data);
 echo "签名的数据: " . $sign . "\n";
 
 //验证
+//公钥验证
 $verify = $rsa->verify($data, $sign);
 echo "验证的数据: " . $verify . "\n", "\n-------------------------------\n";

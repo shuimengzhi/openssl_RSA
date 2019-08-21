@@ -1,0 +1,27 @@
+version: '3'
+services:
+  openssl:
+    image: webdevops/php-nginx:5.6
+    container_name: openssl
+    expose:
+    - "80"
+    environment:
+    # - REDIS_HOST=redis
+    # - REDIS_PORT=6379
+    # - REDIS_PASSWORD=
+    # - REDIS_DB=0
+    # - MYSQL_HOST=mysql
+    # - MYSQL_PORT=3306
+    # - MYSQL_USERNAME=root
+    # - MYSQL_PASSWORD=root
+    # - MYSQL_DB_NAME=oauth2
+    # - CS_PROTOCOL=wss
+    # - CS_ADDRESS=sjs.ngrok.hanwide.com/socket.io/,www.shuimengzhi.com/socket.io/
+    - VIRTUAL_HOST=www.sjs.shuimengzhi.qiasdf.com
+    - WEB_DOCUMENT_ROOT=/app
+    volumes:
+    - /Users/shuimengzhi/Documents/Openssl_test:/app
+    # - ~/Documents/workplace/18yang/dsc-nginx.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
+    # - ~/Documents/workplace/18yang/customer_service/supervisor.conf:/opt/docker/etc/supervisor.d/project.supervisor.conf
+    # - ~/Documents/workplace/10-php.conf:/opt/docker/etc/nginx/vhost.common.d/10-php.conf
+    network_mode: docker_network
